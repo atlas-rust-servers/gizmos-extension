@@ -16,6 +16,12 @@
       <Reference Include="Assembly-CSharp">
         <HintPath>..\dependencies\Assembly-CSharp.dll</HintPath>
       </Reference>
+      <Reference Include="Assembly-CSharp-firstpass">
+        <HintPath>..\dependencies\Assembly-CSharp-firstpass.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Console">
+        <HintPath>..\dependencies\Facepunch.Console.dll</HintPath>
+      </Reference>
       <Reference Include="Facepunch.Network">
         <HintPath>..\dependencies\Facepunch.Network.dll</HintPath>
       </Reference>

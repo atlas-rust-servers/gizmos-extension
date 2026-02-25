@@ -17,6 +17,18 @@ public class GizmosExt : Extension
 
     public GizmosExt(ExtensionManager manager) : base(manager) { }
 
+    public override void Load()
+    {
+        base.Load();
+        SendHandler.Initialize();
+    }
+
+    public override void Unload()
+    {
+        SendHandler.Shutdown();
+        base.Unload();
+    }
+
     public override IEnumerable<string> GetPreprocessorDirectives()
     {
         yield return "GIZMOS_FRAMEWORK";

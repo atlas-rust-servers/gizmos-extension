@@ -11,11 +11,22 @@ public static partial class OxideGizmos
 {
     private const string COMMAND_TEXT = "ddraw.text";
 
-    public static void Text(BasePlayer player, Vector3 pos, string text, Color color, float duration,
+    public static void Text([NotNull] Connection connection, Vector3 pos, string text, Color color, float duration,
         float visibleDistance = float.PositiveInfinity)
     {
-        if (player != null)
-            player.SendAdminCommand(COMMAND_TEXT, duration, color, pos, text, visibleDistance);
+        if (connection == null)
+            throw new ArgumentNullException(nameof(connection));
+
+        SendHandler.Enqueue(connection, COMMAND_TEXT, duration, color, pos, text, visibleDistance);
+    }
+
+    public static void Text([NotNull] BasePlayer player, Vector3 pos, string text, Color color, float duration,
+        float visibleDistance = float.PositiveInfinity)
+    {
+        if (player == null)
+            throw new ArgumentNullException(nameof(player));
+
+        Text(player.Connection, pos, text, color, duration, visibleDistance);
     }
 
     public static void Text([NotNull] IEnumerable<BasePlayer> players, Vector3 pos, string text, Color color, float duration,
@@ -24,8 +35,7 @@ public static partial class OxideGizmos
         if (players == null)
             throw new ArgumentNullException(nameof(players));
 
-        foreach (BasePlayer player in players)
-            Text(player, pos, text, color, duration, visibleDistance);
+        SendHandler.Enqueue(players, COMMAND_TEXT, duration, color, pos, text, visibleDistance);
     }
 
     public static void Text([NotNull] List<Connection> connections, Vector3 pos, string text, Color color, float duration,
@@ -34,7 +44,6 @@ public static partial class OxideGizmos
         if (connections == null)
             throw new ArgumentNullException(nameof(connections));
 
-        IEnumerable<BasePlayer> players = connections.Select(x => x.player as BasePlayer);
-        Text(players, pos, text, color, duration, visibleDistance);
+        SendHandler.Enqueue(connections, COMMAND_TEXT, duration, color, pos, text, visibleDistance);
     }
 }

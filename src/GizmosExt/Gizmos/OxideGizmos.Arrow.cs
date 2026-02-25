@@ -11,11 +11,22 @@ public static partial class OxideGizmos
 {
     private const string COMMAND_ARROW = "ddraw.arrow";
 
-    public static void Arrow(BasePlayer player, Vector3 from, Vector3 to, float headSize, Color color, float duration,
+    public static void Arrow([NotNull] Connection connection, Vector3 from, Vector3 to, float headSize, Color color, float duration,
         float visibleDistance = float.PositiveInfinity)
     {
-        if (player != null)
-            player.SendAdminCommand(COMMAND_ARROW, duration, color, from, to, headSize, visibleDistance);
+        if (connection == null)
+            throw new ArgumentNullException(nameof(connection));
+
+        SendHandler.Enqueue(connection, COMMAND_ARROW, duration, color, from, to, headSize, visibleDistance);
+    }
+
+    public static void Arrow([NotNull] BasePlayer player, Vector3 from, Vector3 to, float headSize, Color color, float duration,
+        float visibleDistance = float.PositiveInfinity)
+    {
+        if (player == null)
+            throw new ArgumentNullException(nameof(player));
+
+        Arrow(player.Connection, from, to, headSize, color, duration, visibleDistance);
     }
 
     public static void Arrow([NotNull] IEnumerable<BasePlayer> players, Vector3 from, Vector3 to, float headSize, Color color, float duration,
@@ -24,8 +35,7 @@ public static partial class OxideGizmos
         if (players == null)
             throw new ArgumentNullException(nameof(players));
 
-        foreach (BasePlayer player in players)
-            Arrow(player, from, to, headSize, color, duration, visibleDistance);
+        SendHandler.Enqueue(players, COMMAND_ARROW, duration, color, from, to, headSize, visibleDistance);
     }
 
     public static void Arrow([NotNull] List<Connection> connections, Vector3 from, Vector3 to, float headSize, Color color, float duration,
@@ -34,16 +44,18 @@ public static partial class OxideGizmos
         if (connections == null)
             throw new ArgumentNullException(nameof(connections));
 
-        IEnumerable<BasePlayer> players = connections.Select(x => x.player as BasePlayer);
-        Arrow(players, from, to, headSize, color, duration, visibleDistance);
+        SendHandler.Enqueue(connections, COMMAND_ARROW, duration, color, from, to, headSize, visibleDistance);
     }
 
     /// <summary>
     /// Render a top-down arrow at a given position.
     /// </summary>
-    public static void TopDownArrow(BasePlayer player, Vector3 pos, float yPos, Color color, float duration,
+    public static void TopDownArrow([NotNull] BasePlayer player, Vector3 pos, float yPos, Color color, float duration,
         float height = 50, float headSize = 15, float visibleDistance = float.PositiveInfinity)
     {
+        if (player == null)
+            throw new ArgumentNullException(nameof(player));
+
         var to = new Vector3(pos.x, yPos, pos.z);
         Vector3 from = to + new Vector3(0, height, 0);
 
@@ -74,7 +86,9 @@ public static partial class OxideGizmos
         if (connections == null)
             throw new ArgumentNullException(nameof(connections));
 
-        IEnumerable<BasePlayer> players = connections.Select(x => x.player as BasePlayer);
-        TopDownArrow(players, pos, yPos, color, duration, height, headSize, visibleDistance);
+        var to = new Vector3(pos.x, yPos, pos.z);
+        Vector3 from = to + new Vector3(0, height, 0);
+
+        Arrow(connections, from, to, headSize, color, duration, visibleDistance);
     }
 }
