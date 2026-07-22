@@ -1,10 +1,18 @@
 # Gizmos Framework
-Gizmos framework for [Rust](https://store.steampowered.com/app/252490/Rust/) using the [Oxide/uMod](https://umod.org) extension platforms exposing debug methods for developers.
+Gizmos framework for [Rust](https://store.steampowered.com/app/252490/Rust/) using the [Oxide/uMod](https://umod.org) or [Carbon](https://carbonmod.gg) extension platforms, exposing debug methods for developers.
 
 ## Getting Started
-1. Grab the Oxide.Ext.GizmosExt.dll from latest release
-2. Put the DLL into `RustDedicated_Data\Managed` folder
-3. Restart the server
+Download the artifact for your extension platform from the latest release:
+
+### Oxide/uMod
+1. Download `Oxide.Ext.GizmosExt.dll`.
+2. Put the DLL into the `RustDedicated_Data\Managed` folder.
+3. Restart the server.
+
+### Carbon
+1. Download `Carbon.Ext.GizmosExt.dll`.
+2. Put the DLL into the `carbon\extensions` folder.
+3. Restart the server.
 
 ## Usage
 ```csharp

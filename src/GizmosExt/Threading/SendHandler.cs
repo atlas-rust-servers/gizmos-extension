@@ -1,7 +1,12 @@
 ﻿using System.Collections.Concurrent;
 using Facepunch;
 using Network;
+#if CARBON
+using Carbon;
+#endif
+#if OXIDE
 using Oxide.Core;
+#endif
 
 namespace Oxide.Ext.GizmosExt;
 
@@ -75,7 +80,12 @@ internal static class SendHandler
                 }
                 catch (Exception ex)
                 {
+#if CARBON
+                    Logger.Error($"[GizmosFramework] An error occurred while sending gizmos: {ex}");
+#endif
+#if OXIDE
                     Interface.Oxide.NextTick(() => { Interface.Oxide.LogException("[GizmosFramework] An error occured while sending gizmos", ex); });
+#endif
                 }
                 finally
                 {
