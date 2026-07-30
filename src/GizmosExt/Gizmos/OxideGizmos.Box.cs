@@ -17,7 +17,7 @@ public static partial class OxideGizmos
         if (connection == null)
             throw new ArgumentNullException(nameof(connection));
 
-        SendHandler.Enqueue(connection, COMMAND_BOX, duration, color, pos, size, rot.eulerAngles, visibleDistance, zTest);
+        SendHandler.Enqueue(connection, COMMAND_BOX, duration, color, pos, size.ToString(), rot.eulerAngles, visibleDistance, zTest);
     }
 
     public static void Box([NotNull] BasePlayer player, Vector3 pos, Quaternion rot, Vector3 size, Color color, float duration,
