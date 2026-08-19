@@ -98,7 +98,7 @@ public class SampleGizmosExt : CovalencePlugin
         bool distanceFade = GetBool(args, 1, DISTANCE_FADE);
         bool zTest = GetBool(args, 2, Z_TEST);
 
-        const string text = "<size=20>Hello World!</size>";
+        const string text = "Hello World!";
         Vector3 pos = player.eyes.position;
 
         OxideGizmos.Text(player, pos, text, Color.green, DURATION, scale, distanceFade, zTest);
