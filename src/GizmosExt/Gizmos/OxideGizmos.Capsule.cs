@@ -11,75 +11,91 @@ public static partial class OxideGizmos
 {
     private const string COMMAND_CAPSULE = "ddraw.capsule";
 
-    public static void Capsule([NotNull] Connection connection, Vector3 pos, Vector3 rot, float radius, float height, Color color, float duration,
-        float visibleDistance = float.PositiveInfinity)
+    public static void Capsule([NotNull] Connection connection,
+        Vector3 pos, Vector3 rot, float radius, float height, Color color, float duration,
+        bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
+        NetworkableId entityID = default, string id = null)
     {
         if (connection == null)
             throw new ArgumentNullException(nameof(connection));
 
-        SendHandler.Enqueue(connection, COMMAND_CAPSULE, duration, color, pos, rot, radius, height, visibleDistance);
+        SendHandler.Enqueue(connection, COMMAND_CAPSULE, duration, color, pos, rot, radius, height, distanceFade, zTest, entityID, id);
     }
 
-    public static void Capsule(BasePlayer player, Vector3 pos, Vector3 rot, float radius, float height, Color color, float duration,
-        float visibleDistance = float.PositiveInfinity)
+    public static void Capsule(BasePlayer player,
+        Vector3 pos, Vector3 rot, float radius, float height, Color color, float duration,
+        bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
+        NetworkableId entityID = default, string id = null)
     {
         if (player == null)
             throw new ArgumentNullException(nameof(player));
 
-        Capsule(player.Connection, pos, rot, radius, height, color, duration, visibleDistance);
+        Capsule(player.Connection, pos, rot, radius, height, color, duration, distanceFade, zTest, entityID, id);
     }
 
-    public static void Capsule([NotNull] IEnumerable<BasePlayer> players, Vector3 pos, Vector3 rot, float radius, float height, Color color, float duration,
-        float visibleDistance = float.PositiveInfinity)
+    public static void Capsule([NotNull] IEnumerable<BasePlayer> players,
+        Vector3 pos, Vector3 rot, float radius, float height, Color color, float duration,
+        bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
+        NetworkableId entityID = default, string id = null)
     {
         if (players == null)
             throw new ArgumentNullException(nameof(players));
 
-        SendHandler.Enqueue(players, COMMAND_CAPSULE, duration, color, pos, rot, radius, height, visibleDistance);
+        SendHandler.Enqueue(players, COMMAND_CAPSULE, duration, color, pos, rot, radius, height, distanceFade, zTest, entityID, id);
     }
 
-    public static void Capsule([NotNull] List<Connection> connections, Vector3 pos, Vector3 rot, float radius, float height, Color color, float duration,
-        float visibleDistance = float.PositiveInfinity)
+    public static void Capsule([NotNull] List<Connection> connections,
+        Vector3 pos, Vector3 rot, float radius, float height, Color color, float duration,
+        bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
+        NetworkableId entityID = default, string id = null)
     {
         if (connections == null)
             throw new ArgumentNullException(nameof(connections));
 
-        SendHandler.Enqueue(connections, COMMAND_CAPSULE, duration, color, pos, rot, radius, height, visibleDistance);
+        SendHandler.Enqueue(connections, COMMAND_CAPSULE, duration, color, pos, rot, radius, height, distanceFade, zTest, entityID, id);
     }
 
-    public static void Capsule([NotNull] Connection connection, Vector3 pos, Vector3 rot, float radius, float height, Vector3 color, float duration,
-        float visibleDistance = float.PositiveInfinity)
+    public static void Capsule([NotNull] Connection connection,
+        Vector3 pos, Vector3 rot, float radius, float height, Vector3 color, float duration,
+        bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
+        NetworkableId entityID = default, string id = null)
     {
         if (connection == null)
             throw new ArgumentNullException(nameof(connection));
 
-        SendHandler.Enqueue(connection, COMMAND_CAPSULE, duration, color, pos, rot, radius, height, visibleDistance);
+        SendHandler.Enqueue(connection, COMMAND_CAPSULE, duration, color, pos, rot, radius, height, distanceFade, zTest, entityID, id);
     }
 
-    public static void Capsule(BasePlayer player, Vector3 pos, Vector3 rot, float radius, float height, Vector3 color, float duration,
-        float visibleDistance = float.PositiveInfinity)
+    public static void Capsule([NotNull] BasePlayer player,
+        Vector3 pos, Vector3 rot, float radius, float height, Vector3 color, float duration,
+        bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
+        NetworkableId entityID = default, string id = null)
     {
         if (player == null)
             throw new ArgumentNullException(nameof(player));
 
-        Capsule(player.Connection, pos, rot, radius, height, color, duration, visibleDistance);
+        Capsule(player.Connection, pos, rot, radius, height, color, duration, distanceFade, zTest, entityID, id);
     }
 
-    public static void Capsule([NotNull] IEnumerable<BasePlayer> players, Vector3 pos, Vector3 rot, float radius, float height, Vector3 color, float duration,
-        float visibleDistance = float.PositiveInfinity)
+    public static void Capsule([NotNull] IEnumerable<BasePlayer> players,
+        Vector3 pos, Vector3 rot, float radius, float height, Vector3 color, float duration,
+        bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
+        NetworkableId entityID = default, string id = null)
     {
         if (players == null)
             throw new ArgumentNullException(nameof(players));
 
-        SendHandler.Enqueue(players, COMMAND_CAPSULE, duration, color, pos, rot, radius, height, visibleDistance);
+        SendHandler.Enqueue(players, COMMAND_CAPSULE, duration, color, pos, rot, radius, height, distanceFade, zTest, entityID, id);
     }
 
-    public static void Capsule([NotNull] List<Connection> connections, Vector3 pos, Vector3 rot, float radius, float height, Vector3 color, float duration,
-        float visibleDistance = float.PositiveInfinity)
+    public static void Capsule([NotNull] List<Connection> connections,
+        Vector3 pos, Vector3 rot, float radius, float height, Vector3 color, float duration,
+        bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
+        NetworkableId entityID = default, string id = null)
     {
         if (connections == null)
             throw new ArgumentNullException(nameof(connections));
 
-        SendHandler.Enqueue(connections, COMMAND_CAPSULE, duration, color, pos, rot, radius, height, visibleDistance);
+        SendHandler.Enqueue(connections, COMMAND_CAPSULE, duration, color, pos, rot, radius, height, distanceFade, zTest, entityID, id);
     }
 }

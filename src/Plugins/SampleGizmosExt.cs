@@ -32,7 +32,7 @@ public class SampleGizmosExt : CovalencePlugin
         const float distance = 10f;
         Vector3 to = from + player.eyes.HeadRay().direction * distance;
 
-        OxideGizmos.Line(player, DURATION, Color.green, from, to, distanceFade, zTest);
+        OxideGizmos.Line(player, from, to, Color.green, DURATION, distanceFade, zTest);
     }
 
     [UsedImplicitly]

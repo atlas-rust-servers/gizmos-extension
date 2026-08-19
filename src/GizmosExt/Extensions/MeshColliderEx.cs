@@ -24,9 +24,9 @@ public static class MeshColliderEx
                 b = collider.transform.TransformPoint(b);
                 c = collider.transform.TransformPoint(c);
 
-                OxideGizmos.Line(player, duration, color, a, b);
-                OxideGizmos.Line(player, duration, color, b, c);
-                OxideGizmos.Line(player, duration, color, c, a);
+                OxideGizmos.Line(player, a, b, color, duration);
+                OxideGizmos.Line(player, b, c, color, duration);
+                OxideGizmos.Line(player, c, a, color, duration);
             }
         }
 
@@ -46,9 +46,9 @@ public static class MeshColliderEx
                 b = collider.transform.TransformPoint(b);
                 c = collider.transform.TransformPoint(c);
 
-                OxideGizmos.Line(players, duration, color, a, b);
-                OxideGizmos.Line(players, duration, color, b, c);
-                OxideGizmos.Line(players, duration, color, c, a);
+                OxideGizmos.Line(players, a, b, color, duration);
+                OxideGizmos.Line(players, b, c, color, duration);
+                OxideGizmos.Line(players, c, a, color, duration);
             }
         }
     }
