@@ -10,15 +10,9 @@ public class CarbonExtension : ICarbonExtension
 {
     void ICarbonAddon.Awake(EventArgs args) { }
 
-    void ICarbonAddon.OnLoaded(EventArgs args)
-    {
-        SendHandler.Initialize();
-    }
+    void ICarbonAddon.OnLoaded(EventArgs args) { }
 
-    void ICarbonAddon.OnUnloaded(EventArgs args)
-    {
-        SendHandler.Shutdown();
-    }
+    void ICarbonAddon.OnUnloaded(EventArgs args) { }
 }
 
 #endif
