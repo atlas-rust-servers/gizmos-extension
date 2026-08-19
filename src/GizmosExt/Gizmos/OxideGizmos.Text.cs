@@ -15,7 +15,7 @@ public static partial class OxideGizmos
     public static void Text([NotNull] Connection connection,
         Vector3 pos, string text, Color color, float duration,
         float scale = DEFAULT_SCALE, bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_LINE_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (connection == null)
             throw new ArgumentNullException(nameof(connection));
@@ -26,7 +26,7 @@ public static partial class OxideGizmos
     public static void Text([NotNull] BasePlayer player,
         Vector3 pos, string text, Color color, float duration,
         float scale = DEFAULT_SCALE, bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_LINE_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (player == null)
             throw new ArgumentNullException(nameof(player));
@@ -37,7 +37,7 @@ public static partial class OxideGizmos
     public static void Text([NotNull] IEnumerable<BasePlayer> players,
         Vector3 pos, string text, Color color, float duration,
         float scale = DEFAULT_SCALE, bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_LINE_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (players == null)
             throw new ArgumentNullException(nameof(players));
@@ -48,7 +48,7 @@ public static partial class OxideGizmos
     public static void Text([NotNull] List<Connection> connections,
         Vector3 pos, string text, Color color, float duration,
         float scale = DEFAULT_SCALE, bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_LINE_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (connections == null)
             throw new ArgumentNullException(nameof(connections));

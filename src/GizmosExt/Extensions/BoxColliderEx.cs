@@ -10,7 +10,7 @@ public static class BoxColliderEx
     {
         public void DrawGizmos(BasePlayer player, float duration, Color color,
             bool distanceFade = OxideGizmos.DEFAULT_DISTANCE_FADE, bool zTest = OxideGizmos.DEFAULT_Z_TEST,
-            NetworkableId entityID = default, string id = null)
+            NetworkableId entityID = default, string id = OxideGizmos.DEFAULT_ID)
         {
             OxideGizmos.Box(player, col.transform.position, col.transform.rotation, col.size, color, duration,
                 distanceFade, zTest, entityID, id);
@@ -18,7 +18,7 @@ public static class BoxColliderEx
 
         public void DrawGizmos(IEnumerable<BasePlayer> players, float duration, Color color,
             bool distanceFade = OxideGizmos.DEFAULT_DISTANCE_FADE, bool zTest = OxideGizmos.DEFAULT_Z_TEST,
-            NetworkableId entityID = default, string id = null)
+            NetworkableId entityID = default, string id = OxideGizmos.DEFAULT_ID)
         {
             OxideGizmos.Box(players, col.transform.position, col.transform.rotation, col.size, color, duration,
                 distanceFade, zTest, entityID, id);

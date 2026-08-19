@@ -10,7 +10,7 @@ public static class CapsuleColliderEx
     {
         public void DrawGizmos(BasePlayer player, float duration, Color color,
             bool distanceFade = OxideGizmos.DEFAULT_DISTANCE_FADE, bool zTest = OxideGizmos.DEFAULT_Z_TEST,
-            NetworkableId entityID = default, string id = null)
+            NetworkableId entityID = default, string id = OxideGizmos.DEFAULT_ID)
         {
             Transform transform = col.transform;
             OxideGizmos.Capsule(player, transform.position, transform.rotation.eulerAngles, col.radius, col.height, color, duration,
@@ -19,7 +19,7 @@ public static class CapsuleColliderEx
 
         public void DrawGizmos(IEnumerable<BasePlayer> players, float duration, Color color,
             bool distanceFade = OxideGizmos.DEFAULT_DISTANCE_FADE, bool zTest = OxideGizmos.DEFAULT_Z_TEST,
-            NetworkableId entityID = default, string id = null)
+            NetworkableId entityID = default, string id = OxideGizmos.DEFAULT_ID)
         {
             Transform transform = col.transform;
             OxideGizmos.Capsule(players, transform.position, transform.rotation.eulerAngles, col.radius, col.height, color, duration,

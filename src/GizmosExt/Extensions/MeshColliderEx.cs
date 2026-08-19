@@ -10,7 +10,7 @@ public static class MeshColliderEx
     {
         public void DrawGizmos(BasePlayer player, float duration, Color color,
             bool distanceFade = OxideGizmos.DEFAULT_DISTANCE_FADE, bool zTest = OxideGizmos.DEFAULT_LINE_Z_TEST,
-            NetworkableId entityID = default, string id = null)
+            NetworkableId entityID = default, string id = OxideGizmos.DEFAULT_ID)
         {
             Mesh mesh = collider.sharedMesh;
             Vector3[] vertices = mesh.vertices;
@@ -34,7 +34,7 @@ public static class MeshColliderEx
 
         public void DrawGizmos(IEnumerable<BasePlayer> players, float duration, Color color,
             bool distanceFade = OxideGizmos.DEFAULT_DISTANCE_FADE, bool zTest = OxideGizmos.DEFAULT_LINE_Z_TEST,
-            NetworkableId entityID = default, string id = null)
+            NetworkableId entityID = default, string id = OxideGizmos.DEFAULT_ID)
         {
             Mesh mesh = collider.sharedMesh;
             Vector3[] vertices = mesh.vertices;

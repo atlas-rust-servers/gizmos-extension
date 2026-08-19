@@ -14,7 +14,7 @@ public static partial class OxideGizmos
     public static void Sphere([NotNull] Connection connection,
         Vector3 pos, float radius, Color color, float duration,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (connection == null)
             throw new ArgumentNullException(nameof(connection));
@@ -25,7 +25,7 @@ public static partial class OxideGizmos
     public static void Sphere([NotNull] BasePlayer player,
         Vector3 pos, float radius, Color color, float duration,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (player == null)
             throw new ArgumentNullException(nameof(player));
@@ -36,7 +36,7 @@ public static partial class OxideGizmos
     public static void Sphere([NotNull] IEnumerable<BasePlayer> players,
         Vector3 pos, float radius, Color color, float duration,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (players == null)
             throw new ArgumentNullException(nameof(players));
@@ -47,7 +47,7 @@ public static partial class OxideGizmos
     public static void Sphere([NotNull] List<Connection> connections,
         Vector3 pos, float radius, Color color, float duration,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (connections == null)
             throw new ArgumentNullException(nameof(connections));
@@ -58,7 +58,7 @@ public static partial class OxideGizmos
     public static void Sphere([NotNull] Connection connection,
         Vector3 pos, float radius, Vector3 color, float duration,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (connection == null)
             throw new ArgumentNullException(nameof(connection));
@@ -69,7 +69,7 @@ public static partial class OxideGizmos
     public static void Sphere([NotNull] BasePlayer player,
         Vector3 pos, float radius, Vector3 color, float duration,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (player == null)
             throw new ArgumentNullException(nameof(player));
@@ -80,7 +80,7 @@ public static partial class OxideGizmos
     public static void Sphere([NotNull] IEnumerable<BasePlayer> players,
         Vector3 pos, float radius, Vector3 color, float duration,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (players == null)
             throw new ArgumentNullException(nameof(players));
@@ -91,7 +91,7 @@ public static partial class OxideGizmos
     public static void Sphere([NotNull] List<Connection> connections,
         Vector3 pos, float radius, Vector3 color, float duration,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (connections == null)
             throw new ArgumentNullException(nameof(connections));

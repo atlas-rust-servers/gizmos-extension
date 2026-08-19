@@ -16,7 +16,7 @@ public static partial class OxideGizmos
     public static void Arrow([NotNull] Connection connection,
         Vector3 from, Vector3 to, float headSize, Color color, float duration,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_LINE_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (connection == null)
             throw new ArgumentNullException(nameof(connection));
@@ -27,7 +27,7 @@ public static partial class OxideGizmos
     public static void Arrow([NotNull] BasePlayer player,
         Vector3 from, Vector3 to, float headSize, Color color, float duration,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_LINE_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (player == null)
             throw new ArgumentNullException(nameof(player));
@@ -38,7 +38,7 @@ public static partial class OxideGizmos
     public static void Arrow([NotNull] IEnumerable<BasePlayer> players,
         Vector3 from, Vector3 to, float headSize, Color color, float duration,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_LINE_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (players == null)
             throw new ArgumentNullException(nameof(players));
@@ -49,7 +49,7 @@ public static partial class OxideGizmos
     public static void Arrow([NotNull] List<Connection> connections,
         Vector3 from, Vector3 to, float headSize, Color color, float duration,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_LINE_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (connections == null)
             throw new ArgumentNullException(nameof(connections));
@@ -63,7 +63,7 @@ public static partial class OxideGizmos
     public static void TopDownArrow([NotNull] BasePlayer player,
         Vector3 pos, float yPos, Color color, float duration, float height = DEFAULT_HEIGHT, float headSize = DEFAULT_HEAD_SIZE,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_LINE_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (player == null)
             throw new ArgumentNullException(nameof(player));
@@ -80,7 +80,7 @@ public static partial class OxideGizmos
     public static void TopDownArrow([NotNull] IEnumerable<BasePlayer> players,
         Vector3 pos, float yPos, Color color, float duration, float height = DEFAULT_HEIGHT, float headSize = DEFAULT_HEAD_SIZE,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_LINE_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (players == null)
             throw new ArgumentNullException(nameof(players));
@@ -97,7 +97,7 @@ public static partial class OxideGizmos
     public static void TopDownArrow([NotNull] List<Connection> connections,
         Vector3 pos, float yPos, Color color, float duration, float height = DEFAULT_HEIGHT, float headSize = DEFAULT_HEAD_SIZE,
         bool distanceFade = DEFAULT_DISTANCE_FADE, bool zTest = DEFAULT_LINE_Z_TEST,
-        NetworkableId entityID = default, string id = null)
+        NetworkableId entityID = default, string id = DEFAULT_ID)
     {
         if (connections == null)
             throw new ArgumentNullException(nameof(connections));
