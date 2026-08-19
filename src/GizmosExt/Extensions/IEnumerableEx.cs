@@ -10,7 +10,17 @@ internal static class IEnumerableEx
     public static List<Connection> GetOnlineConnectionsPooled(this IEnumerable<BasePlayer> players)
     {
         var list = Facepunch.Pool.Get<List<Connection>>();
-        list.AddRange(from player in players where player != null select player.Connection into con where con != null select con);
+
+        foreach (BasePlayer player in players)
+        {
+            if (!player.IsValid())
+                continue;
+
+            Connection connection = player.Connection;
+            if (connection != null)
+                list.Add(connection);
+        }
+
         return list;
     }
 }

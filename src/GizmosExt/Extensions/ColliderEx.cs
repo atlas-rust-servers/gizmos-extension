@@ -6,41 +6,44 @@ namespace Oxide.Ext.GizmosExt;
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public static class ColliderEx
 {
-    public static void DrawGizmos(this Collider col, BasePlayer player, float duration, Color color)
+    extension(Collider col)
     {
-        switch (col)
+        public void DrawGizmos(BasePlayer player, float duration, Color color)
         {
-            case SphereCollider sphere:
-                sphere.DrawGizmos(player, duration, color);
-                break;
-            case BoxCollider box:
-                box.DrawGizmos(player, duration, color);
-                break;
-            case CapsuleCollider capsule:
-                capsule.DrawGizmos(player, duration, color);
-                break;
-            case MeshCollider mesh:
-                mesh.DrawGizmos(player, duration, color);
-                break;
+            switch (col)
+            {
+                case SphereCollider sphere:
+                    sphere.DrawGizmos(player, duration, color);
+                    break;
+                case BoxCollider box:
+                    box.DrawGizmos(player, duration, color);
+                    break;
+                case CapsuleCollider capsule:
+                    capsule.DrawGizmos(player, duration, color);
+                    break;
+                case MeshCollider mesh:
+                    mesh.DrawGizmos(player, duration, color);
+                    break;
+            }
         }
-    }
 
-    public static void DrawGizmos(this Collider col, IEnumerable<BasePlayer> players, float duration, Color color)
-    {
-        switch (col)
+        public void DrawGizmos(IEnumerable<BasePlayer> players, float duration, Color color)
         {
-            case SphereCollider sphere:
-                sphere.DrawGizmos(players, duration, color);
-                break;
-            case BoxCollider box:
-                box.DrawGizmos(players, duration, color);
-                break;
-            case CapsuleCollider capsule:
-                capsule.DrawGizmos(players, duration, color);
-                break;
-            case MeshCollider mesh:
-                mesh.DrawGizmos(players, duration, color);
-                break;
+            switch (col)
+            {
+                case SphereCollider sphere:
+                    sphere.DrawGizmos(players, duration, color);
+                    break;
+                case BoxCollider box:
+                    box.DrawGizmos(players, duration, color);
+                    break;
+                case CapsuleCollider capsule:
+                    capsule.DrawGizmos(players, duration, color);
+                    break;
+                case MeshCollider mesh:
+                    mesh.DrawGizmos(players, duration, color);
+                    break;
+            }
         }
     }
 }

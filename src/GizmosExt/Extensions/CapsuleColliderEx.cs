@@ -6,15 +6,18 @@ namespace Oxide.Ext.GizmosExt;
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public static class CapsuleColliderEx
 {
-    public static void DrawGizmos(this CapsuleCollider col, BasePlayer player, float duration, Color color)
+    extension(CapsuleCollider col)
     {
-        Transform transform = col.transform;
-        OxideGizmos.Capsule(player, transform.position, transform.rotation.eulerAngles, col.radius, col.height, color, duration);
-    }
+        public void DrawGizmos(BasePlayer player, float duration, Color color)
+        {
+            Transform transform = col.transform;
+            OxideGizmos.Capsule(player, transform.position, transform.rotation.eulerAngles, col.radius, col.height, color, duration);
+        }
 
-    public static void DrawGizmos(this CapsuleCollider col, IEnumerable<BasePlayer> players, float duration, Color color)
-    {
-        Transform transform = col.transform;
-        OxideGizmos.Capsule(players, transform.position, transform.rotation.eulerAngles, col.radius, col.height, color, duration);
+        public void DrawGizmos(IEnumerable<BasePlayer> players, float duration, Color color)
+        {
+            Transform transform = col.transform;
+            OxideGizmos.Capsule(players, transform.position, transform.rotation.eulerAngles, col.radius, col.height, color, duration);
+        }
     }
 }
